@@ -1,0 +1,163 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Blood Detection using Fingerprint',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/hero-image.jpg',
+      alt: 'Blood Group Detection Hero Image',
+      style: {
+        width: '100%',
+        height: '360px', // Fixed height for consistency
+        objectFit: 'cover', // Ensure image covers the container properly
+      }
+    }}
+    className="mb-12" // Add margin bottom to space from the next section
+  >
+    <Fragment slot="title">
+      Blood Group Detection<span class="hidden xl:inline"></span>
+      <span class="text-accent dark:text-white highlight"> using</span> Fingerprint
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Blood Group Detection using Fingerprints is possible because of the presence of antigens and proteins in sweat from the ridges and grooves of the fingertips.</span>
+      </span>
+      <span class="block mb-2 sm:hidden font-bold text-grey-600">------------------------------</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Custom Features Section *************** -->
+<section id="features" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-6 md:px-12">
+    <h2 class="text-3xl font-semibold text-center mb-6">How You Can Contribute and Benefit from Blood Services</h2>
+    <p class="text-center mb-12">Did you know? The average adult human has about 10-12 pints of blood, which makes up roughly 7-8% of their body weight.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Feature Card -->
+      <div class="flex flex-col bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://img.freepik.com/free-photo/coronavirus-blood-samples-arrangement-lab_23-2149107272.jpg" alt="Blood Group Detection" class="w-full h-40 object-cover rounded-t-lg" />
+        <div class="flex flex-col p-6">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold mb-2">Blood Group Detection</h3>
+            <p class="text-gray-600">Identify Your Blood Group with Ease</p>
+          </div>
+        </div>
+      </div>
+      <!-- Feature Card -->
+      <div class="flex flex-col bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://images.unsplash.com/photo-1615461066159-fea0960485d5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ymxvb2QlMjBzYW1wbGV8ZW58MHx8MHx8fDA%3D" alt="Request Blood" class="w-full h-40 object-cover rounded-t-lg" />
+        <div class="flex flex-col p-6">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold mb-2">Request Blood</h3>
+            <p class="text-gray-600">Urgent Blood Requests: Help Save Lives Today</p>
+          </div>
+        </div>
+      </div>
+      <!-- Feature Card -->
+      <div class="flex flex-col bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PoLJhRLb8RsgLPEMw1sNmUCryNy6yAxoBw&s" alt="Donate Blood" class="w-full h-40 object-cover rounded-t-lg" />
+        <div class="flex flex-col p-6">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold mb-2">Donate Blood</h3>
+            <p class="text-gray-600">Become a Lifesaver: Sign Up to Donate Blood</p>
+          </div>
+        </div>
+      </div>
+      <!-- Feature Card -->
+      <div class="flex flex-col bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-300 ease-in-out">
+        <img src="https://png.pngtree.com/background/20230525/original/pngtree-image-of-futuristic-medical-hospital-room-picture-image_2736851.jpg" alt="Find Nearby Hospital" class="w-full h-40 object-cover rounded-t-lg" />
+        <div class="flex flex-col p-6">
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold mb-2">Find Nearby Hospital</h3>
+            <p class="text-gray-600">Use tools like Google Maps to find a nearby hospital quickly if needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Our Services"
+    title="We are dedicated to delivering exceptional services that exceed your expectations."
+    items={[
+      {
+        title: 'Outstanding Support',
+        description: 'Our technology ensures accurate and efficient identification of blood types.',
+      },
+      {
+        title: 'Our Commitment',
+        description: 'We are committed to facilitating quick and effective blood requests and donations.',
+      },
+      {
+        title: 'Tailored Solutions',
+        description: 'We offer tailored solutions to meet your specific needs in blood services.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Service Illustration',
+    }}
+    className="py-12" // Add padding to space from sections above and below
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Systems Deployed', amount: '500+' },
+      { title: 'Successful Matches', amount: '1.2M' },
+      { title: 'Clients Served', amount: '300+' },
+      { title: 'Years of Experience', amount: '10+' },
+    ]}
+    className="py-12" // Add padding to space from sections above and below
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Research Associated',
+        href: 'https://www.matec-conferences.org/articles/matecconf/pdf/2024/04/matecconf_icmed2024_01069.pdf',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+    className="py-12" // Add padding to space from sections above and below
+  >
+    <Fragment slot="title">
+      Advanced Fingerprint Detection Technology
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Discover how our state-of-the-art fingerprint detection systems can enhance your security and identification processes. <br class="hidden md:inline" /> Don’t wait to improve your security measures!
+    </Fragment>
+  </CallToAction>
+</Layout>

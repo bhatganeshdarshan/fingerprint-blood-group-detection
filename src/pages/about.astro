@@ -1,0 +1,143 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'About Us',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="About Us"
+    image={{
+      src: 'https://images.unsplash.com/photo-1585079374502-415f8516dcc3?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'About Us Image',
+    }}
+  >
+    <Fragment slot="title">
+      Pioneering Blood Detection Technology and Services
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We specialize in advanced blood group detection using fingerprints, facilitating blood requests and donations, and helping you find nearby hospitals swiftly.
+    </Fragment>
+  </Hero>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    title="Our Impact"
+    stats={[
+      { title: 'Detection Systems', amount: '200+' },
+      { title: 'Blood Requests Processed', amount: '5,000+' },
+      { title: 'Successful Donations', amount: '1,000+' },
+      { title: 'Partner Hospitals', amount: '50+' },
+    ]}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Our Services"
+    subtitle="We offer a range of services to support your health and safety needs."
+    columns={2}
+    items={[
+      {
+        title: 'Blood Group Detection',
+        description: 'Utilize cutting-edge technology to accurately detect blood groups from fingerprints.',
+        image: 'https://example.com/path/to/fingerprint-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Request Blood',
+        description: 'Quickly request blood for urgent needs with our streamlined process.',
+        image: 'https://example.com/path/to/request-blood-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Donate Blood',
+        description: 'Join our blood donation drives and contribute to saving lives.',
+        image: 'https://example.com/path/to/donate-blood-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Find Nearby Hospital',
+        description: 'Easily locate the nearest hospitals using our integrated tools.',
+        image: 'https://example.com/path/to/find-hospital-image.jpg', // Replace with actual image URL
+      },
+    ]}
+  />
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Our Mission"
+    subtitle="Our commitment is to provide reliable and efficient services in the realm of blood detection and support."
+    items={[
+      {
+        title: 'Innovative Solutions',
+        description: 'Employing state-of-the-art technology for accurate blood group detection.',
+        image: 'https://example.com/path/to/innovation-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Accessible Services',
+        description: 'Making blood requests and donations easy and accessible for everyone.',
+        image: 'https://example.com/path/to/accessibility-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Community Support',
+        description: 'Partnering with hospitals and organizations to enhance public health and safety.',
+        image: 'https://example.com/path/to/community-support-image.jpg', // Replace with actual image URL
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Our Locations"
+    tagline="Find us globally"
+    columns={3}
+    items={[
+      {
+        title: 'USA',
+        description: '123 Health Lane, Suite 400, New York, NY',
+        image: 'https://example.com/path/to/usa-location-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'UK',
+        description: '456 Wellness Road, London, SW1A 1AA',
+        image: 'https://example.com/path/to/uk-location-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'India',
+        description: '789 Care Street, Mumbai, 400001',
+        image: 'https://example.com/path/to/india-location-image.jpg', // Replace with actual image URL
+      },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Get in Touch"
+    tagline="Contact Us"
+    columns={2}
+    items={[
+      {
+        title: 'Chat with Us',
+        description: 'Reach out via our live chat for immediate assistance.',
+        image: 'https://example.com/path/to/chat-image.jpg', // Replace with actual image URL
+      },
+      {
+        title: 'Call Us',
+        description: 'Contact our support team by phone for detailed inquiries.',
+        image: 'https://example.com/path/to/call-image.jpg', // Replace with actual image URL
+      },
+    ]}
+  />
+</Layout>

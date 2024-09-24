@@ -1,0 +1,199 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Donate Blood',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/blood-donation-hero.jpg',
+      alt: 'Blood Donation Hero Image',
+      style: {
+        width: '1108px',
+        height: '360px',
+        objectFit: 'cover',
+      }
+    }}
+  >
+    <Fragment slot="title">
+      Donate<span class="hidden xl:inline"></span>
+      <span class="text-accent dark:text-white highlight"> Blood</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Your donation can save lives. Join our community of donors and make a difference today.</span>
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-grey-600">------------------------------</span>
+      Learn more about how your blood donation can help those in need.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Why Donate Blood?"
+    title="Benefits of Blood Donation"
+    subtitle="Did you know? Donating blood not only helps save lives but also contributes to a healthier community."
+    items={[
+      {
+        title: 'Save Lives',
+        description: 'Your donation can make a critical difference for patients in need of blood transfusions.',
+      },
+      {
+        title: 'Community Health',
+        description: 'Regular donations help ensure a stable supply of blood for hospitals and clinics.',
+      },
+      {
+        title: 'Health Benefits',
+        description: 'Donating blood can have positive effects on your own health, such as improving iron levels and stimulating the production of new blood cells.',
+      },
+      {
+        title: 'Simple Process',
+        description: 'The donation process is quick and straightforward, with minimal discomfort and lasting impact.',
+      },
+    ]}
+  />
+
+  <!-- Blood Donation Details Section **************** -->
+
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">How to Donate Blood</h2>
+      <p class="text-lg mb-8">
+        Follow these simple steps to make your blood donation experience smooth and impactful. Donating blood is a generous act that can save lives.
+      </p>
+      <ul class="list-disc ml-5 space-y-2">
+        <li><strong>1. Find a Donation Center:</strong> Locate a nearby blood donation center or mobile blood drive.</li>
+        <li><strong>2. Schedule an Appointment:</strong> Book your donation appointment to ensure availability and minimize wait times.</li>
+        <li><strong>3. Prepare for Donation:</strong> Follow pre-donation guidelines such as staying hydrated and eating a healthy meal.</li>
+        <li><strong>4. Donate Blood:</strong> The donation process typically takes about 30 minutes and is performed by trained professionals.</li>
+        <li><strong>5. Post-Donation Care:</strong> Rest for a few minutes, enjoy refreshments, and follow any aftercare instructions provided.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Donation Form Section **************** -->
+
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+      <p class="text-lg mb-8">
+        If you have any questions or need more information about donating blood, please fill out the form below and we'll get back to you as soon as possible.
+      </p>
+      <form action="/submit-form" method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent sm:text-sm" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent sm:text-sm" />
+        </div>
+        <div>
+          <label for="blood-group" class="block text-sm font-medium text-gray-700">Blood Group</label>
+          <select id="blood-group" name="blood-group" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent sm:text-sm">
+            <option value="" disabled selected>Select your blood group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-accent focus:border-accent sm:text-sm"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Our Commitment"
+    title="Dedicated to Promoting Blood Donation"
+    items={[
+      {
+        title: 'Supportive Environment',
+        description: 'We ensure a welcoming and supportive environment for all donors to feel comfortable and valued.',
+      },
+      {
+        title: 'Awareness Campaigns',
+        description: 'We run regular campaigns to raise awareness about the importance of blood donation and how to get involved.',
+      },
+      {
+        title: 'Continuous Improvement',
+        description: 'We strive to enhance the donation process and donor experience through feedback and innovation.',
+      },
+    ]}
+    image={{
+     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3yv8c2sJN452_mQF6bDsdLqAkeAVe9hqhdA&s',
+     alt: 'Blood Donation Event',
+    }}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Donations Made', amount: '25,000+' },
+      { title: 'Lives Saved', amount: '75,000+' },
+      { title: 'Blood Drives Held', amount: '300+' },
+      { title: 'Years of Service', amount: '10+' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Find a Donation Center',
+        href: 'https://www.example.com/find-donation-center',
+        target: '_blank',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Make a Difference Today
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Your blood donation can save lives and improve the health of those in need. <br class="hidden md:inline" /> Join us in making a positive impact on our community!
+    </Fragment>
+  </CallToAction>
+</Layout>

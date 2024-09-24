@@ -1,0 +1,154 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import PricingTable from '~/components/widgets/PricingTable.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pricing',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { text: 'Contact Us', href: '#contact' },
+    ]}
+    image={{
+      src: '~/assets/images/pricing-hero.jpg',
+      alt: 'Pricing Hero Image',
+      style: {
+        width: '1108px',
+        height: '360px',
+        objectFit: 'cover',
+      }
+    }}
+  >
+    <Fragment slot="title">
+      Our<span class="hidden xl:inline"></span>
+      <span class="text-accent dark:text-white highlight"> Pricing</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Choose a pricing plan that best fits your needs and start enjoying our services today.</span>
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-grey-600">------------------------------</span>
+      We offer a variety of pricing options to suit different needs and budgets. Find the plan that works best for you.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Pricing Table Widget ********** -->
+
+  <section id="pricing" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-4">Pricing Plans</h2>
+      <PricingTable
+        plans={[
+          {
+            title: 'Basic Plan',
+            price: '$19/month',
+            features: [
+              'Feature 1',
+              'Feature 2',
+              'Feature 3',
+            ],
+            action: {
+              text: 'Choose Basic',
+              href: '#contact',
+              variant: 'secondary',
+            },
+          },
+          {
+            title: 'Standard Plan',
+            price: '$49/month',
+            features: [
+              'Feature 1',
+              'Feature 2',
+              'Feature 3',
+              'Feature 4',
+            ],
+            action: {
+              text: 'Choose Standard',
+              href: '#contact',
+              variant: 'primary',
+            },
+          },
+          {
+            title: 'Premium Plan',
+            price: '$99/month',
+            features: [
+              'Feature 1',
+              'Feature 2',
+              'Feature 3',
+              'Feature 4',
+              'Feature 5',
+            ],
+            action: {
+              text: 'Choose Premium',
+              href: '#contact',
+              variant: 'primary',
+            },
+          },
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Why Choose Our Plans"
+    title="Flexible and Transparent Pricing"
+    items={[
+      {
+        title: 'No Hidden Fees',
+        description: 'Our pricing is straightforward with no hidden costs. You pay what you see.',
+      },
+      {
+        title: 'Flexible Plans',
+        description: 'Choose a plan that fits your needs and upgrade or downgrade as necessary.',
+      },
+      {
+        title: 'Value for Money',
+        description: 'Get the best features and services for the price. We offer exceptional value for our plans.',
+      },
+    ]}
+    image={{
+     src: 'https://plus.unsplash.com/premium_photo-1723114841540-0189f6449713?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+     alt: 'Pricing Benefits',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get Started',
+        href: '#contact',
+        target: '_self',
+        icon: 'tabler:check',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Choose a Plan?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Select the plan that suits you best and get started today. <br class="hidden md:inline" /> Contact us for any queries or to get started!
+    </Fragment>
+  </CallToAction>
+</Layout>

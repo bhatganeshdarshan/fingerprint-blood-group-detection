@@ -1,0 +1,137 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Our Services',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{
+      src: '~/assets/images/services-hero.jpg',
+      alt: 'Our Services Hero Image',
+      style: {
+        width: '1108px',
+        height: '360px',
+        objectFit: 'cover',
+      }
+    }}
+  >
+    <Fragment slot="title">
+      Our<span class="hidden xl:inline"></span>
+      <span class="text-accent dark:text-white highlight"> Services</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">Discover the wide range of services we offer to meet your needs and exceed your expectations.</span>
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-grey-600">------------------------------</span>
+      Explore how our services can benefit you and help you achieve your goals.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Our Core Services"
+    title="Explore Our Services"
+    subtitle="We offer a variety of services designed to provide solutions and add value to our clients."
+    items={[
+      {
+        title: 'Service One',
+        description: 'Description of Service One. Explain the key features and benefits of this service.',
+      },
+      {
+        title: 'Service Two',
+        description: 'Description of Service Two. Highlight how this service meets specific needs or solves particular problems.',
+      },
+      {
+        title: 'Service Three',
+        description: 'Description of Service Three. Provide details on the unique aspects and advantages of this service.',
+      },
+      {
+        title: 'Service Four',
+        description: 'Description of Service Four. Outline the value and impact this service offers to clients.',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Why Choose Us"
+    title="Committed to Delivering Excellence"
+    items={[
+      {
+        title: 'Expert Team',
+        description: 'Our team of experts is dedicated to providing top-quality services and solutions tailored to your needs.',
+      },
+      {
+        title: 'Customized Solutions',
+        description: 'We offer personalized services designed to address your specific requirements and objectives.',
+      },
+      {
+        title: 'Customer Satisfaction',
+        description: 'Our commitment to client satisfaction drives us to continuously improve and exceed expectations.',
+      },
+    ]}
+    image={{
+     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSibjUftQBLuoFZ1ub_rvGG2SltPnoorwMOvQ&s',
+     alt: 'Service Image',
+    }}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Projects Completed', amount: '1,000+' },
+      { title: 'Clients Served', amount: '500+' },
+      { title: 'Years of Experience', amount: '15+' },
+      { title: 'Awards Won', amount: '20+' },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get in Touch',
+        href: 'https://www.example.com/contact',
+        target: '_blank',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to Experience Our Services?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Contact us today to learn more about how our services can benefit you. <br class="hidden md:inline" /> Let us help you achieve your goals!
+    </Fragment>
+  </CallToAction>
+</Layout>

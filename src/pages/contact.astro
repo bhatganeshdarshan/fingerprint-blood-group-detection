@@ -1,0 +1,77 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Let's Connect!" />
+
+  <ContactUs
+    id="form"
+    title="Drop us a message today!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="We are here to help!"
+items={[
+  {
+    title: 'General support',
+    description: `For assistance with account management and website navigation, payment issues, accessing purchased templates or any general questions about our website's functionality don't hesitate to start a chat with us. Our support team is here to help ensure you have a smooth and seamless experience.`,
+  },
+  {
+    title: 'Contact sales',
+    description: `For inquiries related to product purchases, pricing information, custom solutions or any other sales-related questions please reach out to our sales team. We are here to provide you with detailed information and help you find the best solutions tailored to your needs.`,
+  },
+  {
+    title: 'Technical support',
+    description: `For assistance with account management, website navigation, payment issues or troubleshooting purchased templates our technical support team is ready to help. Whether you need guidance on using our platform or resolving technical problems we're here to ensure you have a smooth experience.`,
+  },
+  {
+    title: 'Phone',
+    description: '+1 (234) 567-890',
+    icon: 'tabler:headset',
+  },
+  {
+    title: 'Email',
+    description: 'contact@support.com',
+    icon: 'tabler:mail',
+  },
+  {
+    title: 'Location',
+    description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
+    icon: 'tabler:map-pin',
+  },
+]}
+  />
+</Layout>
